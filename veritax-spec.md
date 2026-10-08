@@ -45,7 +45,8 @@ Veritax es una capa de arbitraje descentralizado para escrows en Cardano: dos pa
 
 - Commit inmediato después de cada tarea: `[done] nombre-de-la-tarea` (o `[wip] ...` si queda a medias).
 - Después de cada commit, marcar la tarea `[x]` acá; si no se puede, `[~]` con nota.
-- Al cerrar cada sesión, actualizar `
+- Al cerrar cada sesión, actualizar `## Estado actual` (última tarea, próxima, blockers) y commitear.
+- Siempre Cardano Preprod, nunca mainnet.
 
 ## Estado actual
 
