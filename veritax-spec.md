@@ -65,6 +65,6 @@ _Actualizado: 2026-10-08 (Devin)_
 2. Producción: https://veritax-jet.vercel.app (Vercel auto-deploya cada push a `main`; Root Directory `frontend`). Chequeo rápido: `curl https://veritax-jet.vercel.app/api/config` tiene que devolver el JSON de `contracts/deployment.json`.
 3. Tarea 7 (demo Preprod), en curso:
    - Wallets GameChanger en Preprod (https://wallet.gamechanger.finance/?networkTag=preprod): `A` creada (`addr_test1qq9nj4jqd7lstp9xkd8800sjalrdmp5kmde3geejxpqrca24dv34la0nd0yr8wuej9nnsqsanpwf0uh0cms4jy6zdpcsejfhs5`, fondeada con 10000 tADA del faucet), `B` creada (`addr_test1qqez45889a0jgpa5ddn2mw7vnzkw5pagxtalgrdj3a0755cj7766ehxz93jrvhwhkhvzx9vq0s73mpvpczcar59l9qhqdfvd6m`), `Arbitro` creada (`addr_test1qqugt0usrwexj6tqz6nl96wuthegfh0anmvjxln9vs6ucnp8azfv029redz2rchm4a4jx5ffxphrku0tdgv8rqxm7lqspv8nth`). Las semillas las guarda Bernardo, nunca van al repo ni al chat.
-   - Fondear A desde el faucet (https://docs.cardano.org/cardano-testnets/tools/faucet, red Preprod) y desde A mandar ~20 tADA a B y al árbitro.
+   - [x] Fondeo: A recibió 10000 tADA del faucet; A mandó 20 tADA a B y 20 al árbitro (tx `b95d64545635fbcf3f8c354ab717c00d5cb488739cefcd16738aa1d839ac11fc`). Tip: un link GameChanger `buildTx` usa la wallet activa, cambiar a A antes de abrirlo.
    - En la app: `/` con A (crear, guardar el hash) → `/dispute` con B → `/ruling` con el árbitro. Verificar cada tx en https://preprod.cardanoscan.io y anotar los hashes acá.
    - Al terminar: marcar 7 `[x]` y commitear `[done] demo-preprod`.
