@@ -54,6 +54,6 @@ _Actualizado: 2026-10-08 (Devin)_
 - Hecho: contrato Aiken (23 tests OK), dirección Preprod en `contracts/deployment.json`, frontend Next.js con las 3 pantallas + GameChanger (lint, typecheck, 9 tests de flujo en emulador y build OK), README.
 - Verificado contra Preprod real: `/api/config`, `/api/contract` y `/api/build` (arma una tx de creación válida usando Koios).
 - Pendiente:
-  - [x] 1b. Importar `Ber254/veritax` en Vercel (Root Directory = `frontend`) y poner el link en el README.
+  - [x] 1b. Vercel: https://veritax-jet.vercel.app (Root Directory = `frontend`, auto-deploy desde `main`). `deployment.json` se importa estático para que quede empaquetado en las API routes.
   - [ ] 7. Demo end-to-end en Preprod con 3 wallets GameChanger fondeadas (crear → disputa → fallo).
 - Notas: `deadline` se guarda en el datum pero no se valida on-chain (el spec no define su efecto). El ID del contrato es el hash de la tx de creación; las transiciones posteriores lo llevan en metadata label 8484 (`origin`).
