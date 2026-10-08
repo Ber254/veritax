@@ -1,0 +1,11 @@
+{
+  "network": "Preprod",
+  "koiosUrl": "https://preprod.koios.rest/api/v1",
+  "validator": "escrow.escrow.spend",
+  "plutusVersion": "v3",
+  "compiler": "Aiken v1.1.23+8949565",
+  "scriptHash": "043ac616b176d6cd33d118edf25bf52e5321ccaa658078d513f2c712",
+  "scriptAddress": "addr_test1wqzr43skk9mddnfn6yvwmujm75h9xgwv4fjcq7x4z0evwys90eadx",
+  "explorer": "https://preprod.cardanoscan.io/address/addr_test1wqzr43skk9mddnfn6yvwmujm75h9xgwv4fjcq7x4z0evwys90eadx",
+  "deployedAt": "2026-10-08T14:42:44.946Z"
+}
