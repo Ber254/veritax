@@ -6,7 +6,7 @@ si hay conflicto, cualquiera activa una disputa y un árbitro designado decide e
 
 - Red: **Cardano Preprod** (nunca mainnet)
 - Contrato: [`addr_test1wqzr43skk9mddnfn6yvwmujm75h9xgwv4fjcq7x4z0evwys90eadx`](https://preprod.cardanoscan.io/address/addr_test1wqzr43skk9mddnfn6yvwmujm75h9xgwv4fjcq7x4z0evwys90eadx) (ver [`contracts/deployment.json`](contracts/deployment.json))
-- Deploy en Vercel: _pendiente_
+- Deploy en Vercel: https://veritax-jet.vercel.app
 
 ## Estructura
 
