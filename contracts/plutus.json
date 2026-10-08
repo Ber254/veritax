@@ -1,0 +1,285 @@
+{
+  "preamble": {
+    "title": "veritax/contracts",
+    "description": "Veritax arbitrated escrow (Cardano)",
+    "version": "0.0.0",
+    "plutusVersion": "v3",
+    "compiler": {
+      "name": "Aiken",
+      "version": "v1.1.23+8949565"
+    },
+    "license": "Apache-2.0"
+  },
+  "validators": [
+    {
+      "title": "escrow.escrow.spend",
+      "datum": {
+        "title": "datum",
+        "schema": {
+          "$ref": "#/definitions/escrow~1EscrowDatum"
+        }
+      },
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/escrow~1Action"
+        }
+      },
+      "compiledCode": "5905b201010029800aba2aba1aba0aab9faab9eaab9dab9a488888896600264653001300800198041804800cdc3a400530080024888966002600460106ea800e2653001300d00198069807000cdc3a400091119912cc004c00c006264646644b300130170038034590141bad3014001375a60280046028002601e6ea802a2b300130080018acc004c03cdd5005400a2c80822b30013370e9002000c4c8c8cc8966002602e0070068b2028375a60280026eb4c050008c050004c03cdd500545900d201a40342b30013001300c37540051332259800980198071baa001899192cc004c028c040dd5180a18089baa301430113754003159800980519198008009bac30153012375401444b30010018a4001133225980099baf3018301537546030602a6ea8c018c054dd5001180c180a9baa30183015375400b1337009001000c4005013180b00099801001180b800a0288cc0048c054c058c058c05800644653001001801d20004004444b30010028800c66002007301a002992cc004cdd7980d180b9baa001005899b80002323322330020020012259800800c00e26464b3001337229101000018acc004cdc7a4410000189bad301c002802a0348998020021810001a034375c6034002603a00280d8c8c8cc004004dd59805980d1baa0042259800800c00e26464b300133722911000018acc004cdc7a4410000189bab301d002802a0368998020021810801a036375c6036002603c00280e052f5bded8c02900044009015180c8012006405d230153016301600191192cc004c020c04cdd5000c4c8c8cc004004dd6180c980d180d180d180d180d180d180d180d180b1baa0052259800800c528456600266e3cdd7180d000801c528c4cc008008c06c0050152030375c602e60286ea80062941012180b18099baa0019180a980b180b180b180b180b000cc040dd5006244444464b3001300c0028992cc006600266ebd30103d87b80003004301937540194a14a280ba2b300133005011301c30193754019159800998028089805180c9baa00c8cc004046019375a6038003375a6038603a002801229410174528202e8a50405c60306ea804e2b300130110028acc004cdd7a6103d8798000300330183754017159800acc004cc010040c06cc060dd5005c528c4cc010040c024c060dd5005a02c8992cc004c074006264b30013375e603a60346ea8004c074c068dd5005456600266ebcc02cc068dd50009805980d1baa00a899baf3007301a375400266e9520043301c323232323374a900019810181080219810181080199810181080119810181080099810181098110009981026103d87a80004bd7018108009810000980f800980d1baa00d4bd70452820308a504060603800316406864660020026eb0c018c064dd5008912cc004006297ae0899912cc004cdd7980f980e1baa301f301c3754004603e60386ea8c07cc070dd500644cc078008cc01001000626600800800280d0c074004c07800501b4528202c8a5040591325980099baf4c103d87a8000300430193754019159800998028089803180c9baa00c8cc004046019375a6038003375a6038603a002801229410174528202e3018375402680b101611112cc004cdc4a400000515980099b89480000062b30013370e66e00008004dd69805180d9baa0038acc004cdd7980f180d9baa003300c301b37540071337126eb4c028c06cdd5001998049bac3008301b3754008603c60366ea800e2b300133712004660126eb0c020c06cdd5002180f180d9baa003899b89001330093758601060366ea8010c030c06cdd5001c5282032406514a080ca29410194528203245900f45900f180098081baa3013301037540044602660280031640346020601a6ea8008c8cc004004dd6180898071baa0062259800800c5300103d87a80008992cc004cdd7980998081baa001006899ba548000cc0480052f5c113300300330140024038602400280822c8058c030dd50040c024dd5001c590070c020004c00cdd5004452689b2b200201",
+      "hash": "043ac616b176d6cd33d118edf25bf52e5321ccaa658078d513f2c712"
+    },
+    {
+      "title": "escrow.escrow.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "compiledCode": "5905b201010029800aba2aba1aba0aab9faab9eaab9dab9a488888896600264653001300800198041804800cdc3a400530080024888966002600460106ea800e2653001300d00198069807000cdc3a400091119912cc004c00c006264646644b300130170038034590141bad3014001375a60280046028002601e6ea802a2b300130080018acc004c03cdd5005400a2c80822b30013370e9002000c4c8c8cc8966002602e0070068b2028375a60280026eb4c050008c050004c03cdd500545900d201a40342b30013001300c37540051332259800980198071baa001899192cc004c028c040dd5180a18089baa301430113754003159800980519198008009bac30153012375401444b30010018a4001133225980099baf3018301537546030602a6ea8c018c054dd5001180c180a9baa30183015375400b1337009001000c4005013180b00099801001180b800a0288cc0048c054c058c058c05800644653001001801d20004004444b30010028800c66002007301a002992cc004cdd7980d180b9baa001005899b80002323322330020020012259800800c00e26464b3001337229101000018acc004cdc7a4410000189bad301c002802a0348998020021810001a034375c6034002603a00280d8c8c8cc004004dd59805980d1baa0042259800800c00e26464b300133722911000018acc004cdc7a4410000189bab301d002802a0368998020021810801a036375c6036002603c00280e052f5bded8c02900044009015180c8012006405d230153016301600191192cc004c020c04cdd5000c4c8c8cc004004dd6180c980d180d180d180d180d180d180d180d180b1baa0052259800800c528456600266e3cdd7180d000801c528c4cc008008c06c0050152030375c602e60286ea80062941012180b18099baa0019180a980b180b180b180b180b000cc040dd5006244444464b3001300c0028992cc006600266ebd30103d87b80003004301937540194a14a280ba2b300133005011301c30193754019159800998028089805180c9baa00c8cc004046019375a6038003375a6038603a002801229410174528202e8a50405c60306ea804e2b300130110028acc004cdd7a6103d8798000300330183754017159800acc004cc010040c06cc060dd5005c528c4cc010040c024c060dd5005a02c8992cc004c074006264b30013375e603a60346ea8004c074c068dd5005456600266ebcc02cc068dd50009805980d1baa00a899baf3007301a375400266e9520043301c323232323374a900019810181080219810181080199810181080119810181080099810181098110009981026103d87a80004bd7018108009810000980f800980d1baa00d4bd70452820308a504060603800316406864660020026eb0c018c064dd5008912cc004006297ae0899912cc004cdd7980f980e1baa301f301c3754004603e60386ea8c07cc070dd500644cc078008cc01001000626600800800280d0c074004c07800501b4528202c8a5040591325980099baf4c103d87a8000300430193754019159800998028089803180c9baa00c8cc004046019375a6038003375a6038603a002801229410174528202e3018375402680b101611112cc004cdc4a400000515980099b89480000062b30013370e66e00008004dd69805180d9baa0038acc004cdd7980f180d9baa003300c301b37540071337126eb4c028c06cdd5001998049bac3008301b3754008603c60366ea800e2b300133712004660126eb0c020c06cdd5002180f180d9baa003899b89001330093758601060366ea8010c030c06cdd5001c5282032406514a080ca29410194528203245900f45900f180098081baa3013301037540044602660280031640346020601a6ea8008c8cc004004dd6180898071baa0062259800800c5300103d87a80008992cc004cdd7980998081baa001006899ba548000cc0480052f5c113300300330140024038602400280822c8058c030dd50040c024dd5001c590070c020004c00cdd5004452689b2b200201",
+      "hash": "043ac616b176d6cd33d118edf25bf52e5321ccaa658078d513f2c712"
+    }
+  ],
+  "definitions": {
+    "Int": {
+      "dataType": "integer"
+    },
+    "Option<cardano/address/StakeCredential>": {
+      "title": "Option",
+      "anyOf": [
+        {
+          "title": "Some",
+          "description": "An optional value.",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "$ref": "#/definitions/cardano~1address~1StakeCredential"
+            }
+          ]
+        },
+        {
+          "title": "None",
+          "description": "Nothing.",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": []
+        }
+      ]
+    },
+    "aiken/crypto/ScriptHash": {
+      "title": "ScriptHash",
+      "dataType": "bytes"
+    },
+    "aiken/crypto/VerificationKeyHash": {
+      "title": "VerificationKeyHash",
+      "dataType": "bytes"
+    },
+    "cardano/address/Address": {
+      "title": "Address",
+      "description": "A Cardano `Address` typically holding one or two credential references.\n\n Note that legacy bootstrap addresses (a.k.a. 'Byron addresses') are\n completely excluded from Plutus contexts. Thus, from an on-chain\n perspective only exists addresses of type 00, 01, ..., 07 as detailed\n in [CIP-0019 :: Shelley Addresses](https://github.com/cardano-foundation/CIPs/tree/master/CIP-0019/#shelley-addresses).",
+      "anyOf": [
+        {
+          "title": "Address",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "payment_credential",
+              "$ref": "#/definitions/cardano~1address~1PaymentCredential"
+            },
+            {
+              "title": "stake_credential",
+              "$ref": "#/definitions/Option<cardano~1address~1StakeCredential>"
+            }
+          ]
+        }
+      ]
+    },
+    "cardano/address/Credential": {
+      "title": "Credential",
+      "description": "A general structure for representing an on-chain `Credential`.\n\n Credentials are always one of two kinds: a direct public/private key\n pair, or a script (native or Plutus).",
+      "anyOf": [
+        {
+          "title": "VerificationKey",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+            }
+          ]
+        },
+        {
+          "title": "Script",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": [
+            {
+              "$ref": "#/definitions/aiken~1crypto~1ScriptHash"
+            }
+          ]
+        }
+      ]
+    },
+    "cardano/address/PaymentCredential": {
+      "title": "PaymentCredential",
+      "description": "A general structure for representing an on-chain `Credential`.\n\n Credentials are always one of two kinds: a direct public/private key\n pair, or a script (native or Plutus).",
+      "anyOf": [
+        {
+          "title": "VerificationKey",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+            }
+          ]
+        },
+        {
+          "title": "Script",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": [
+            {
+              "$ref": "#/definitions/aiken~1crypto~1ScriptHash"
+            }
+          ]
+        }
+      ]
+    },
+    "cardano/address/StakeCredential": {
+      "title": "StakeCredential",
+      "description": "Represent a type of object that can be represented either inline (by hash)\n or via a reference (i.e. a pointer to an on-chain location).\n\n This is mainly use for capturing pointers to a stake credential\n registration certificate in the case of so-called pointer addresses.",
+      "anyOf": [
+        {
+          "title": "Inline",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "$ref": "#/definitions/cardano~1address~1Credential"
+            }
+          ]
+        },
+        {
+          "title": "Pointer",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": [
+            {
+              "title": "slot_number",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "transaction_index",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "certificate_index",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
+    },
+    "escrow/Action": {
+      "title": "Action",
+      "anyOf": [
+        {
+          "title": "MutualRelease",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "to_a",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "to_b",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        },
+        {
+          "title": "ActivateDispute",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": []
+        },
+        {
+          "title": "ArbitratorRuling",
+          "dataType": "constructor",
+          "index": 2,
+          "fields": [
+            {
+              "title": "to_a",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "to_b",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
+    },
+    "escrow/EscrowDatum": {
+      "title": "EscrowDatum",
+      "description": "Inline datum of every Veritax escrow UTxO. `amount` is in lovelace and\n `deadline` is a POSIX timestamp in milliseconds.",
+      "anyOf": [
+        {
+          "title": "EscrowDatum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "party_a",
+              "$ref": "#/definitions/cardano~1address~1Address"
+            },
+            {
+              "title": "party_b",
+              "$ref": "#/definitions/cardano~1address~1Address"
+            },
+            {
+              "title": "arbitrator",
+              "$ref": "#/definitions/cardano~1address~1Address"
+            },
+            {
+              "title": "amount",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "deadline",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "state",
+              "$ref": "#/definitions/escrow~1State"
+            }
+          ]
+        }
+      ]
+    },
+    "escrow/State": {
+      "title": "State",
+      "anyOf": [
+        {
+          "title": "Locked",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": []
+        },
+        {
+          "title": "Disputed",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": []
+        },
+        {
+          "title": "Resolved",
+          "dataType": "constructor",
+          "index": 2,
+          "fields": []
+        }
+      ]
+    }
+  }
+}
