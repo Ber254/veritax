@@ -4,6 +4,14 @@ import { connectScript, decodeMessage, findAddress, returnUrl, signScript, walle
 
 const ADDRESS_KEY = "veritax.address";
 const txKey = (id: string) => `veritax.tx.${id}`;
+const RETURN_KEY = "veritax.return";
+
+type ReturnContext = Record<string, string> & { op: "connect" | "sign" };
+
+function expectReturn(ctx: ReturnContext): string {
+  window.localStorage.setItem(RETURN_KEY, JSON.stringify(ctx));
+  return returnUrl();
+}
 
 export type Notice = { kind: "ok" | "error"; text: string } | null;
 
@@ -11,7 +19,7 @@ export type SignReturn = { txHash: string; params: Record<string, string> };
 
 /**
  * GameChanger connection + signing. The wallet redirects back to the page with
- * `?op=connect|sign&result=...`; the unsigned tx waits in localStorage meanwhile.
+ * `?result=...`; the pending op and unsigned tx wait in localStorage meanwhile.
  */
 export function useWallet() {
   const [address, setAddress] = useState<string | null>(null);
@@ -29,11 +37,14 @@ export function useWallet() {
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const op = params.get("op");
     const result = params.get("result");
+    const stash = result ? window.localStorage.getItem(RETURN_KEY) : null;
+    window.localStorage.removeItem(RETURN_KEY);
+    const ctx: Record<string, string> = stash ? (JSON.parse(stash) as Record<string, string>) : {};
+    const op = ctx.op ?? null;
     const initial: Record<string, string> = {};
     params.forEach((v, k) => {
-      if (!["op", "result"].includes(k)) initial[k] = v;
+      if (k !== "result") initial[k] = v;
     });
     window.history.replaceState(null, "", window.location.pathname);
     void (async () => {
@@ -47,7 +58,7 @@ export function useWallet() {
           window.localStorage.setItem(ADDRESS_KEY, addr);
           setNotice({ kind: "ok", text: "Wallet conectada." });
         }
-        const id = params.get("id");
+        const id = ctx.id;
         if (op === "sign" && id && result) {
           const stored = window.localStorage.getItem(txKey(id));
           if (!stored) throw new Error("No se encontró la transacción pendiente en este navegador.");
@@ -60,9 +71,7 @@ export function useWallet() {
           });
           window.localStorage.removeItem(txKey(id));
           const rest: Record<string, string> = {};
-          params.forEach((v, k) => {
-            if (!["op", "id", "result"].includes(k)) rest[k] = v;
-          });
+          for (const [k, v] of Object.entries(ctx)) if (!["op", "id"].includes(k)) rest[k] = v;
           setSigned({ txHash: out.txHash, params: rest });
           setNotice({ kind: "ok", text: "Transacción enviada a Cardano Preprod." });
           setBusy(false);
@@ -77,7 +86,7 @@ export function useWallet() {
   }, [fail]);
 
   const connect = useCallback(async () => {
-    window.location.assign(await walletUrl(connectScript(returnUrl({ op: "connect" })), "preprod"));
+    window.location.assign(await walletUrl(connectScript(expectReturn({ op: "connect" })), "preprod"));
   }, []);
 
   const disconnect = useCallback(() => {
@@ -94,7 +103,7 @@ export function useWallet() {
       try {
         const tx = await postJson<BuiltTx>("/api/build", { ...body, address });
         window.localStorage.setItem(txKey(tx.txHash), JSON.stringify(tx));
-        window.location.assign(await walletUrl(signScript(title, tx.txCbor, returnUrl({ op: "sign", id: tx.txHash, ...extra })), "preprod"));
+        window.location.assign(await walletUrl(signScript(title, tx.txCbor, expectReturn({ ...extra, op: "sign", id: tx.txHash })), "preprod"));
       } catch (err) {
         fail(err);
       }

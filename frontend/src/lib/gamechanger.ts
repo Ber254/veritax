@@ -50,11 +50,13 @@ export async function walletUrl(script: object, network: GCNetwork): Promise<str
   return url.toString();
 }
 
-/** Return URL: `{result}` is replaced in-wallet by the packed result. */
-export function returnUrl(params: Record<string, string>): string {
-  const base = new URL(window.location.origin + window.location.pathname);
-  for (const [k, v] of Object.entries(params)) base.searchParams.set(k, v);
-  return `${base.toString()}&result={result}`;
+/**
+ * Return URL: `{result}` is replaced in-wallet by the packed result. GameChanger
+ * rejects `&` in this pattern, so `result` is the only query param; any other
+ * context travels through localStorage (see useWallet).
+ */
+export function returnUrl(): string {
+  return `${window.location.origin}${window.location.pathname}?result={result}`;
 }
 
 export function connectScript(ret: string): object {
