@@ -57,3 +57,13 @@ _Actualizado: 2026-10-08 (Devin)_
   - [x] 1b. Vercel: https://veritax-jet.vercel.app (Root Directory = `frontend`, auto-deploy desde `main`). `deployment.json` se importa estático para que quede empaquetado en las API routes.
   - [ ] 7. Demo end-to-end en Preprod con 3 wallets GameChanger fondeadas (crear → disputa → fallo).
 - Notas: `deadline` se guarda en el datum pero no se valida on-chain (el spec no define su efecto). El ID del contrato es el hash de la tx de creación; las transiciones posteriores lo llevan en metadata label 8484 (`origin`).
+
+### Cómo continuar (handoff para cualquier IA)
+
+1. Leer este archivo y `README.md`. Verificar: `cd contracts && aiken check` y `cd frontend && npm install && npm test && npm run build`.
+2. Producción: https://veritax-jet.vercel.app (Vercel auto-deploya cada push a `main`; Root Directory `frontend`). Chequeo rápido: `curl https://veritax-jet.vercel.app/api/config` tiene que devolver el JSON de `contracts/deployment.json`.
+3. Tarea 7 (demo Preprod), en curso:
+   - Wallets GameChanger en Preprod (https://wallet.gamechanger.finance/?networkTag=preprod): `A` creada; faltan `B` y `Arbitro`. Las semillas las guarda Bernardo, nunca van al repo ni al chat.
+   - Fondear A desde el faucet (https://docs.cardano.org/cardano-testnets/tools/faucet, red Preprod) y desde A mandar ~20 tADA a B y al árbitro.
+   - En la app: `/` con A (crear, guardar el hash) → `/dispute` con B → `/ruling` con el árbitro. Verificar cada tx en https://preprod.cardanoscan.io y anotar los hashes acá.
+   - Al terminar: marcar 7 `[x]` y commitear `[done] demo-preprod`.
