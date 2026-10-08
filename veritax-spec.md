@@ -30,7 +30,7 @@ Veritax es una capa de arbitraje descentralizado para escrows en Cardano: dos pa
 ## Tareas
 
 - [x] 1. Setup del repositorio (`/contracts` Aiken, `/frontend` Next.js)
-- [ ] 1b. Deploy automático en Vercel conectado al repo (lo importa Bernardo desde la UI de Vercel)
+- [x] 1b. Deploy automático en Vercel conectado al repo (lo importa Bernardo desde la UI de Vercel)
 - [x] 2. Smart contract en Aiken (`escrow.ak`)
 - [x] 3. Tests del contrato (casos felices + negativos de los tres redeemers)
 - [x] 4. Deploy del contrato en Preprod (`contracts/deployment.json`)
@@ -54,6 +54,6 @@ _Actualizado: 2026-10-08 (Devin)_
 - Hecho: contrato Aiken (23 tests OK), dirección Preprod en `contracts/deployment.json`, frontend Next.js con las 3 pantallas + GameChanger (lint, typecheck, 9 tests de flujo en emulador y build OK), README.
 - Verificado contra Preprod real: `/api/config`, `/api/contract` y `/api/build` (arma una tx de creación válida usando Koios).
 - Pendiente:
-  - [ ] 1b. Importar `Ber254/veritax` en Vercel (Root Directory = `frontend`) y poner el link en el README.
+  - [x] 1b. Importar `Ber254/veritax` en Vercel (Root Directory = `frontend`) y poner el link en el README.
   - [ ] 7. Demo end-to-end en Preprod con 3 wallets GameChanger fondeadas (crear → disputa → fallo).
 - Notas: `deadline` se guarda en el datum pero no se valida on-chain (el spec no define su efecto). El ID del contrato es el hash de la tx de creación; las transiciones posteriores lo llevan en metadata label 8484 (`origin`).
