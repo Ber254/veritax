@@ -32,7 +32,7 @@ Veritax es una capa de arbitraje descentralizado para escrows en Cardano: dos pa
 - [ ] 1. Setup del repositorio (`/contracts` Aiken, `/frontend` Next.js)
 - [ ] 1b. Deploy automático en Vercel conectado al repo (lo importa Bernardo desde la UI de Vercel)
 - [x] 2. Smart contract en Aiken (`escrow.ak`)
-- [ ] 3. Tests del contrato (casos felices + negativos de los tres redeemers)
+- [x] 3. Tests del contrato (casos felices + negativos de los tres redeemers)
 - [ ] 4. Deploy del contrato en Preprod (`contracts/deployment.json`)
 - [ ] 5a. Frontend: integración GameChanger Wallet
 - [ ] 5b. Pantalla 1 — Crear contrato (`/`)
