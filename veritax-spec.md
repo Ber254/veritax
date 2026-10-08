@@ -35,7 +35,7 @@ Veritax es una capa de arbitraje descentralizado para escrows en Cardano: dos pa
 - [x] 3. Tests del contrato (casos felices + negativos de los tres redeemers)
 - [x] 4. Deploy del contrato en Preprod (`contracts/deployment.json`)
 - [x] 5a. Frontend: integración GameChanger Wallet
-- [ ] 5b. Pantalla 1 — Crear contrato (`/`)
+- [x] 5b. Pantalla 1 — Crear contrato (`/`)
 - [ ] 5c. Pantalla 2 — Activar disputa (`/dispute`)
 - [ ] 5d. Pantalla 3 — Fallo del árbitro (`/ruling`)
 - [ ] 6. README.md
